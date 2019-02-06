@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "scroll-to-text",
+  "description": "...",
+  "version": "1.0.0",
+  "author": "© Nick Freear, 29-June-2018.",
+  "homepage": "https://nfreear.github.io/scroll/?url=https://example.org&text=hello+world",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "scripts": {
+    "start": "live-server --port=9001"
+  }
+}

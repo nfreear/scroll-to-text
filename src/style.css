@@ -1,0 +1,35 @@
+
+body,
+input,
+button {
+  color: #222;
+  font: 1rem sans-serif;
+}
+
+body {
+  margin: 0 5px;
+}
+
+input {
+  padding: 2px 6px;
+  width: 10rem;
+}
+
+input[ type = url ] {
+  width: 25rem;
+}
+
+button {
+  padding: 3px 1rem;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+iframe {
+  height: 450px;
+  x-height: 540px;
+  width: 99.7%;
+}
