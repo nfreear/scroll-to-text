@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scroll-to-text",
-  "description": "A Javascript-based proxy to server a page, and scroll to an arbitrary text.",
+  "description": "A Javascript-based proxy to server a web-page, and scroll to an arbitrary text.",
   "version": "1.0.0",
   "author": "© Nick Freear, 29-June-2018.",
   "homepage": "https://nfreear.github.io/scroll/?url=https://example.org&text=hello+world",
@@ -10,9 +10,12 @@
     "pure-scrollto": "^1.0.4"
   },
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.0",
+    "semistandard": "^13.0.1"
   },
   "scripts": {
-    "start": "live-server --port=9001"
+    "start": "live-server --port=9001",
+    "fix": "semistandard --fix",
+    "test": "semistandard"
   }
 }
