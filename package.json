@@ -10,12 +10,15 @@
     "pure-scrollto": "^1.0.4"
   },
   "devDependencies": {
+    "browserify": "^16.2.3",
     "live-server": "^1.2.0",
     "semistandard": "^13.0.1"
   },
   "scripts": {
+    "build": "browserify -o dist/scroll-to-text.js src/scroll-to-text.js",
     "start": "live-server --port=9001",
     "fix": "semistandard --fix",
-    "test": "semistandard"
+    "lint": "semistandard",
+    "test": "node highlight-test.js"
   }
 }
