@@ -1,19 +1,31 @@
 /*!
+  highlight-phrase.js (Or word).
+
   © Nick Freear, 07-February-2019.
 */
 
 module.exports = {
+	highlight: highlight,
 	highlightPhrase: highlightPhrase,
 	highlightWord: highlightWord
 }
 
-function highlightPhrase(text, query) {
+function highlight(text, query) {
 	if (!text) throw Error('No text provided');
 	if (typeof text !== 'string') throw Error('Passed paramater is not a string');
 	if (!query) throw Error('No query provided');
 	if (typeof query !== 'string')
 		throw Error('Passed paramater is not a string');
 
+  // Crude, but effective ?!
+	if (query.split(' ').length === 1) {
+		return highlightWord(text, query);
+	} else {
+		return highlightPhrase(text, query);
+	}
+}
+
+function highlightPhrase(text, query) {
   const q1 = query.split(' ')[ 0 ];
 	const q2 = query.split(' ')[ 1 ] || null;
 

@@ -2,11 +2,9 @@
   scroll-to-text.js
 
   © Nick Freear, 29-June-2018.
-
-  file:///Users/ndf42/workspace/scroll-to-text/index.html?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings
 */
 
-const highlight = require('./highlight-phrase').highlightPhrase;
+const highlight = require('./highlight-phrase').highlight;
 const L = window.location;
 
 const DEFAULTS = {

@@ -3,6 +3,11 @@
 
 A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.
 
+Features:
+
+ * Supports single or multiple words;
+ * URL parameter to modify the highlight background colour;
+
 ## Install .. build .. test .. serve
 
 ```sh
@@ -34,8 +39,7 @@ API examples:
 
 ## Limitations
 
- * Currently only supports multiple words (_uses first two_) (_Was: only supports single words!_)
- * No animation / smooth-scrolling;
+ * No animation / smooth-scrolling yet;
  * Wire in the form;
  * _... ?_
 
