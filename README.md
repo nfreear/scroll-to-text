@@ -1,15 +1,31 @@
 
 # scroll-to-text #
 
-A Javascript-based proxy to server a web-page, and scroll to an arbitrary text.
+A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.
 
-## Install .. server .. test
+## Install .. build .. test .. serve
 
 ```sh
 npm install
+npm build
 npm test
 npm start
 ```
+
+## Web API
+
+With minimal parameters in the request URL:
+
+ * `/?url={URL}&text={MY TEXT}`
+
+With optional highlight colour:
+
+ * `/?url={URL}&text={MY TEXT}&bg={BACKGROUND COLOUR NAME}`
+
+API examples:
+
+ * `/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings`
+ * `/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings&bg=pink`
 
 ## Examples
 
@@ -18,9 +34,9 @@ npm start
 
 ## Limitations
 
- * Currently only supports single words _(!)_
- * No animation;
- * Wire in form;
+ * Currently only supports multiple words (_uses first two_) (_Was: only supports single words!_)
+ * No animation / smooth-scrolling;
+ * Wire in the form;
  * _... ?_
 
 ---
@@ -31,9 +47,9 @@ npm start
 [ex1-r]: https://nfreear.github.io/scroll-to-text/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings&bg=pink
   "Github.io"
 [ex1b]: https://nfreear.github.io/scroll-to-text/?url=https://poetryfoundation.org/poems/46473/if---&text=Kings
-[ex2-d]: http://127.0.0.1:9001/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=creed
+[ex2-d]: http://127.0.0.1:9001/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=its%20creed
   "Dev/ Localhost"
-[ex2-r]: https://nfreear.github.io/scroll-to-text/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=creed
+[ex2-r]: https://nfreear.github.io/scroll-to-text/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=its%20creed
   "GitHub.io"
 [ex3]: https://nfreear.github.io/scroll-to-text/?url=https://example.org&text=More
 

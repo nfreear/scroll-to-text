@@ -6,7 +6,7 @@
   file:///Users/ndf42/workspace/scroll-to-text/index.html?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings
 */
 
-const highlight = require('./highlight-phrase');
+const highlight = require('./highlight-phrase').highlightPhrase;
 const L = window.location;
 
 const DEFAULTS = {
