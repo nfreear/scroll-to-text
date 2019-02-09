@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scroll-to-text",
-  "description": "A Javascript-based proxy to server a web-page, and scroll to an arbitrary text.",
+  "description": "A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.",
   "version": "1.0.0",
   "author": "© Nick Freear, 29-June-2018.",
   "homepage": "https://nfreear.github.io/scroll/?url=https://example.org&text=hello+world",
@@ -18,7 +18,7 @@
     "build": "browserify -o dist/scroll-to-text.js src/scroll-to-text.js",
     "start": "live-server --port=9001",
     "fix": "semistandard --fix",
-    "lint": "semistandard",
-    "test": "node highlight-test.js"
+    "test": "semistandard",
+    "test-2": "node highlight-test.js"
   }
 }

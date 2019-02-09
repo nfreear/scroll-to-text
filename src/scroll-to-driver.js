@@ -1,6 +1,7 @@
 /*!
 
  Source: https://unpkg.com/pure-scrollto@1.0.4/src/index.js
+ https://github.com/ppzzppz/pure-scrollto
 */
 
 ((W, D, UA, selector) => {

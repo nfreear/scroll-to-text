@@ -24,7 +24,7 @@ const DEFAULTS = {
     ''
   ],
   background: 'yellow',
-  baseUrl: L.origin // Was: 'file:///Users/ndf42/workspace/scroll-to-text'
+  baseUrl: L.origin
 };
 
 const CFG = /* extends */ DEFAULTS;
@@ -37,12 +37,11 @@ var colorMatch = QUERY.match(/bg=(\w+?)(:?&|$)/);
 
 const URL = decodeURIComponent(urlMatch ? urlMatch[ 1 ] : CFG.example.url);
 const TEXT = decodeURIComponent(textMatch ? textMatch[ 1 ] : CFG.example.text);
-const COLOR = decodeURIComponent(colorMatch ? colorMatch[ 1 ]: CFG.background);
+const COLOR = decodeURIComponent(colorMatch ? colorMatch[ 1 ] : CFG.background);
 
 const HOLDER = q(CFG.selector);
 const IFRAME = q('iframe', HOLDER);
 
-const BASE = /* 'data:text/html,' */ '<base href="%s" target="_top" />'.replace(/%s/, URL);
 const REQUEST_URL = CFG.corsProxy + URL;
 
 console.warn('[STT] text:', TEXT, CFG);
@@ -50,20 +49,19 @@ console.warn('[STT] text:', TEXT, CFG);
 fetch(REQUEST_URL)
   .then(resp => resp.text())
   .then(html => {
+    console.warn('[STT] then page:', html);
 
-  console.warn('[STT] then page:', html);
+    const SUFFIX = CFG.pageSuffix.join('\n').replace('{u}', URL).replace('{b}', CFG.baseUrl).replace('{c}', COLOR);
+    const NEW_HTML = highlight(html, TEXT) + SUFFIX;
 
-  const SUFFIX = CFG.pageSuffix.join('\n').replace('{u}', URL).replace('{b}', CFG.baseUrl).replace('{c}', COLOR);
-  const NEW_HTML = highlight(html, TEXT) + SUFFIX;
+    // Fix only needed for 'file:' protocol.
+    const FIX_HTML = NEW_HTML; // .replace(/src="\/\//g, 'src="https://');
 
-  // Fix only needed for 'file:' protocol.
-  const FIX_HTML = NEW_HTML; // .replace(/src="\/\//g, 'src="https://');
+    console.warn('[STT] modified page:', FIX_HTML);
 
-  console.warn('[STT] modified page:', FIX_HTML);
+    IFRAME.setAttribute('srcdoc', /* BASE + */ NEW_HTML); /* 'data:text/html,' */
+  });
 
-  IFRAME.setAttribute('srcdoc', /* BASE + */ NEW_HTML); // resp.text);
-});
-
-function q(selector, element) {
+function q (selector, element) {
   return (element || document).querySelector(selector);
 }

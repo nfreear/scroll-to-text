@@ -1,4 +1,6 @@
 
+[![Build & test status — Travis-CI][travis-icon]][travis]
+
 # scroll-to-text #
 
 A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.
@@ -23,7 +25,7 @@ With minimal parameters in the request URL:
 
  * `/?url={URL}&text={MY TEXT}`
 
-With optional highlight colour:
+With optional highlight background [colour keywords][col]:
 
  * `/?url={URL}&text={MY TEXT}&bg={BACKGROUND COLOUR NAME}`
 
@@ -40,7 +42,7 @@ API examples:
 ## Limitations
 
  * No animation / smooth-scrolling yet;
- * Wire in the form;
+ * Need to wire in the form;
  * _... ?_
 
 ---
@@ -56,5 +58,8 @@ API examples:
 [ex2-r]: https://nfreear.github.io/scroll-to-text/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=its%20creed
   "GitHub.io"
 [ex3]: https://nfreear.github.io/scroll-to-text/?url=https://example.org&text=More
+[col]: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords
+[travis]: https://travis-ci.org/nfreear/scroll-to-text
+[travis-icon]: https://travis-ci.org/nfreear/scroll-to-text.svg?branch=master
 
 [End]: //
