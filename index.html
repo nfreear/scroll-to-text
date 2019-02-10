@@ -6,9 +6,17 @@
 
 <form >
   <p>
-    <label>URL <input type="url" name="url" placeholder="https://example.org" /></label>
-    <label>Text <input name="text" /></label>
-    <button type="submit">Search</button>
+    <label>URL <input type="url" name="url" placeholder="https://example.org" required /></label>
+    <label>Text <input name="text" minlength="2" maxlength="25" required /></label>
+    <label>Num <input type="number" name="occurrence" min="1" max="10" value="1" /></label>
+    <button type="submit">Scroll</button>
+
+    <i class="sep"></i>
+    <!-- <a class="orig" href="#!-orig">Direct link</a> <i class="sep">|</i> -->
+    <a class="legal" href="https://github.com/nfreear/scroll-to-text#disclaimer"
+      title="Legal Disclaimer: &#013;I claim no ownership over the web-content presented below, and accept no responsibility for it. &#013;This is prototype software which may contain bugs!">Disclaimer</a>
+    <i class="sep">|</i>
+    <a class="fork" href="https://github.com/nfreear/scroll-to-text#contribute" title="Contribute">Fork me</a>
   </p>
 </form>
 

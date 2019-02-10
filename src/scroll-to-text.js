@@ -28,7 +28,7 @@ const DEFAULTS = {
     '\n<!-- Injected by: scroll-to-text.js -->',
     // '<base href="{u}" target="_top" />',
     '<script src="{b}/src/scroll-to-driver.js" data-stt-occurrence="{oc}"></script>',
-    '<style> .wh-highlight { background: {col}; border-radius: 5px; padding: 4px; }</style>',
+    '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; padding: 4px; }</style>',
     ''
   ],
   baseUrl: LOC.origin

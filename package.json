@@ -1,10 +1,14 @@
 {
-  "private": true,
   "name": "scroll-to-text",
   "description": "A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.",
   "version": "1.0.0",
+  "license": "NONE",
   "author": "© Nick Freear, 29-June-2018.",
-  "homepage": "https://nfreear.github.io/scroll/?url=https://example.org&text=hello+world",
+  "contributors": [],
+  "repository": "https://github.com/nfreear/scroll-to-text.git",
+  "homepage": "https://nfreear.github.io/scroll-to-text/#?url=https://example.org&text=hello+world",
+  "keywords": [ "proxy", "scrollto", "highlight", "highlight-word", "fetch" ],
+  "engines":  { "node" : ">=9.0" },
   "peerDependencies": {
     "highlight-word": "^1.0.0",
     "pure-scrollto": "^1.0.4"

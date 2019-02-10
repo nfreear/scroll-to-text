@@ -3,24 +3,41 @@ body,
 input,
 button {
   color: #222;
-  font: 1rem sans-serif;
+  font: .92rem sans-serif;
 }
 
 body {
+  background: #fcfcfc;
   margin: 0;
 }
 
+input,
+button {
+  border: 1px #aaa solid;
+  border-radius: 3px;
+}
+
 input {
-  padding: 2px 6px;
-  width: 10rem;
+  padding: 2px 5px;
+  width: 8rem;
 }
 
 input[ type = url ] {
   width: 25rem;
 }
 
+input[ type = number ] {
+  width: 1.6rem;
+}
+
 button {
-  padding: 3px 1rem;
+  background: #eee;
+  cursor: pointer;
+  padding: 3px .8rem;
+}
+
+label {
+  margin-right: .3rem;
 }
 
 h1 {
@@ -30,6 +47,12 @@ h1 {
 
 form {
   margin: .6rem 8px;
+}
+
+.sep {
+  color: gray;
+  font-style: normal;
+  margin: 0 .3rem;
 }
 
 /* https://stackoverflow.com/questions/24157940/iframe-height-auto-css */
