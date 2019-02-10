@@ -12,6 +12,7 @@ const DEFAULTS = {
   selector: '#scroll-to-text',
   url: param('url', 'https://americanrhetoric.com/speeches/mlkihaveadream.htm'),
   text: param('text', 'its creed'),
+  occurence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
   // corsProxy: 'https://corsproxy.github.io/?',
   corsProxy: 'https://cors-anywhere.herokuapp.com/',
@@ -26,8 +27,8 @@ const DEFAULTS = {
   pageSuffix: [
     '\n<!-- Injected by: scroll-to-text.js -->',
     // '<base href="{u}" target="_top" />',
-    '<script src="{b}/src/scroll-to-driver.js"></script>',
-    '<style> .wh-highlight { background: {c}; border-radius: 5px; padding: 4px; }</style>',
+    '<script src="{b}/src/scroll-to-driver.js" data-stt-occurrence="{oc}"></script>',
+    '<style> .wh-highlight { background: {col}; border-radius: 5px; padding: 4px; }</style>',
     ''
   ],
   baseUrl: LOC.origin
@@ -45,9 +46,9 @@ console.warn('[STT] config:', CFG);
 fetch(REQUEST_URL)
   .then(resp => resp.text())
   .then(html => {
-    console.warn('[STT] then page:', html);
+    console.warn('[STT] fetch:', REQUEST_URL); // html)
 
-    const SUFFIX = CFG.pageSuffix.join('\n').replace('{u}', CFG.url).replace('{b}', CFG.baseUrl).replace('{c}', CFG.background);
+    const SUFFIX = CFG.pageSuffix.join('\n').replace('{b}', CFG.baseUrl).replace('{col}', CFG.background).replace('{oc}', CFG.occurence);
     const PREFIX = CFG.pagePrefix.join('\n').replace('{u}', CFG.url);
 
     const NEW_HTML = PREFIX + highlight(html, CFG.text) + SUFFIX;

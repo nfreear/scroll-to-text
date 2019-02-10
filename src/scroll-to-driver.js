@@ -1,15 +1,19 @@
 /*!
+ Injected JS.
 
  Source: https://unpkg.com/pure-scrollto@1.0.4/src/index.js
  https://github.com/ppzzppz/pure-scrollto
 */
 
-((W, D, UA, selector) => {
+((W, D, UA, selector, occurSelector) => {
   'use strict';
 
-  const ELEM = D.querySelector(selector);
+  const OCCUR = D.querySelector(occurSelector).dataset.sttOccurrence;
+  const ELEMS = D.querySelectorAll(selector);
 
-  console.warn('[STT]', ELEM, UA, UA.indexOf('Mobile'));
+  const ELEM = ELEMS.length && ELEMS[ OCCUR - 1 ] ? ELEMS[ OCCUR - 1 ] : null;
+
+  console.warn('[STT] Injected JS:', OCCUR, 'of', ELEMS.length, ELEM); // UA, UA.indexOf('Mobile'));
 
   if (UA.indexOf('Mobile')) {
     W.scrollTo(0, ELEM.offsetTop);
@@ -20,4 +24,4 @@
   }
 
   console.warn('[STT] scroll complete.');
-})(window, document, navigator.userAgent, '.wh-highlight');
+})(window, document, navigator.userAgent, '.wh-highlight', 'script[ data-stt-occurrence ]');
