@@ -8,7 +8,7 @@ A Javascript-based proxy to serve a web-page, and highlight and scroll to an arb
 Features:
 
  * Supports single or multiple words;
- * Scrolls to the Nth occurrence of the word/phrase;
+ * Scrolls to the _Nth_ occurrence of the word/phrase;
  * URL parameter to modify the highlight background colour;
 
 ## Install .. build .. test .. serve
@@ -41,8 +41,8 @@ API examples:
 
 ## Examples
 
- * [Example 1: '_If_' by Rudyard Kipling (text: '_Kings_')][ex1-d]
- * [Example 2: '_I have a dream_' by Martin Luther King (text: '_creed_')][ex2-d]
+ * [Example 1: '_If_' by Rudyard Kipling (text: '_Kings_')][ex1-r]
+ * [Example 2: '_I have a dream_' by Martin Luther King (text: '_creed_')][ex2-r]
 
 ## Limitations
 
@@ -55,18 +55,21 @@ API examples:
 
 The following are included and extended as part of `scroll-to-text`:
 
- * [pure-scrollto][]
+ * [pure-scrollto][] ([js][])
  * [highlight-word][]
 
 ## Disclaimer
 
 I claim no ownership over the web-content presented below via the '_scroll-to-text_' proxy service,
 and accept no responsibility for it.
+Images and other resources may be missing from proxied content (_browser security restrictions?_)
 This is prototype software which may contain bugs!
 
 ---
-© 2018-2019 Nick Freear.
+© 2018-2019 [Nick Freear][n] | License: [MIT][].
 
+[n]: https://twitter.com/nfreear
+[mit]: https://nfreear.mit-license.org/#!-2019-scroll-to-text "© Nick Freear | MIT License"
 [ex1-d]: http://127.0.0.1:9001/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings&bg=pink
   "Dev/ Localhost"
 [ex1-r]: https://nfreear.github.io/scroll-to-text/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings&bg=pink
@@ -82,6 +85,7 @@ This is prototype software which may contain bugs!
 [travis-icon]: https://travis-ci.org/nfreear/scroll-to-text.svg?branch=master
 [pure-scrollto]: https://npmjs.com/package/pure-scrollto/v/1.0.4
   "Author: diqye <262666212@qq.com> | MIT License"
+[js]: https://unpkg.com/pure-scrollto@1.0.4/src/index.js "Javascript: 'index.js'"
 [highlight-word]: https://github.com/DaveBitter/highlight_word/tree/1.0.0
   "Copyright (c) 2018 Dave Bitter | MIT License"
 

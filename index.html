@@ -6,7 +6,7 @@
 
 <form >
   <p>
-    <label>URL <input type="url" name="url" placeholder="https://example.org" required /></label>
+    <label>URL <input type="url" name="url" placeholder="https://example.org" pattern="https?:\/\/[\w\.]{3,}" minlength="10" required /></label>
     <label>Text <input name="text" minlength="2" maxlength="25" required /></label>
     <label>Num <input type="number" name="occurrence" min="1" max="10" value="1" /></label>
     <button type="submit">Scroll</button>

@@ -2,7 +2,7 @@
   "name": "scroll-to-text",
   "description": "A Javascript-based proxy to serve a web-page, and highlight and scroll to an arbitrary text.",
   "version": "1.0.0",
-  "license": "NONE",
+  "license": "MIT",
   "author": "© Nick Freear, 29-June-2018.",
   "contributors": [],
   "repository": "https://github.com/nfreear/scroll-to-text.git",

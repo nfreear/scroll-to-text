@@ -12,7 +12,7 @@ const DEFAULTS = {
   selector: '#scroll-to-text',
   url: param('url', 'https://americanrhetoric.com/speeches/mlkihaveadream.htm'),
   text: param('text', 'its creed'),
-  occurence: parseInt(param('occurrence', 1)),
+  occurrence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
   // corsProxy: 'https://corsproxy.github.io/?',
   corsProxy: 'https://cors-anywhere.herokuapp.com/',
@@ -48,7 +48,7 @@ fetch(REQUEST_URL)
   .then(html => {
     console.warn('[STT] fetch:', REQUEST_URL); // html)
 
-    const SUFFIX = CFG.pageSuffix.join('\n').replace('{b}', CFG.baseUrl).replace('{col}', CFG.background).replace('{oc}', CFG.occurence);
+    const SUFFIX = CFG.pageSuffix.join('\n').replace('{b}', CFG.baseUrl).replace('{col}', CFG.background).replace('{oc}', CFG.occurrence);
     const PREFIX = CFG.pagePrefix.join('\n').replace('{u}', CFG.url);
 
     const NEW_HTML = PREFIX + highlight(html, CFG.text) + SUFFIX;
