@@ -10,6 +10,7 @@ Features:
  * Supports single or multiple words;
  * Scrolls to the _Nth_ occurrence of the word/phrase;
  * URL parameter to modify the highlight background colour;
+ * [Smooth-scrolling][css-scroll] implemented;
 
 ## Install .. build .. test .. serve
 
@@ -46,9 +47,9 @@ API examples:
 
 ## Limitations
 
-<!-- * Scrolls to the first occurrence of the `text`; -->
- * No animation / smooth-scrolling yet;
+ * Not supported in [MS Internet Explorer][fetch] (_works in Chrome, Firefox; other browsers not yet tested_)
  * Need to wire in the form;
+ * Need a _loading_ spinner;
  * _... ?_
 
 ## Included
@@ -75,9 +76,9 @@ This is prototype software which may contain bugs!
 [ex1-r]: https://nfreear.github.io/scroll-to-text/?url=http://kiplingsociety.co.uk/poems_if.htm&text=Kings&bg=pink
   "Github.io"
 [ex1b]: https://nfreear.github.io/scroll-to-text/?url=https://poetryfoundation.org/poems/46473/if---&text=Kings
-[ex2-d]: http://127.0.0.1:9001/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=its%20creed
+[ex2-d]: http://127.0.0.1:9001/?url=http://americanrhetoric.com/speeches/mlkihaveadream.htm&text=Its%20creed
   "Dev/ Localhost"
-[ex2-r]: https://nfreear.github.io/scroll-to-text/?url=https://americanrhetoric.com/speeches/mlkihaveadream.htm&text=its%20creed
+[ex2-r]: https://nick.freear.org.uk/scroll-to-text/?url=http://americanrhetoric.com/speeches/mlkihaveadream.htm&text=Its%20creed
   "GitHub.io"
 [ex3]: https://nfreear.github.io/scroll-to-text/?url=https://example.org&text=More
 [col]: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords
@@ -88,5 +89,11 @@ This is prototype software which may contain bugs!
 [js]: https://unpkg.com/pure-scrollto@1.0.4/src/index.js "Javascript: 'index.js'"
 [highlight-word]: https://github.com/DaveBitter/highlight_word/tree/1.0.0
   "Copyright (c) 2018 Dave Bitter | MIT License"
+
+[css-scroll]: https://caniuse.com/#feat=css-scroll-behavior "css-scroll :~ Chrome, Firefox, Opera only."
+[js-scroll]: https://caniuse.com/#feat=scrollintoview "Most current browsers, incl. MSIE 11."
+[fetch]: https://caniuse.com/#feat=fetch "Fetch API :~ most current browsers, except MSIE."
+[qs]: https://caniuse.com/#feat=queryselector "All current browsers."
+[arrow]: https://caniuse.com/#feat=arrow-functions "Arrow functions :~ most current browsers, except MSIE"
 
 [End]: //

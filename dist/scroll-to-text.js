@@ -97,17 +97,12 @@ const LOC = window.location;
 
 const DEFAULTS = {
   selector: '#scroll-to-text',
-  url: param('url', 'https://americanrhetoric.com/speeches/mlkihaveadream.htm'),
-  text: param('text', 'its creed'),
+  url: param('url', 'http://americanrhetoric.com/speeches/mlkihaveadream.htm'),
+  text: param('text', 'Its creed'),
   occurrence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
-  // corsProxy: 'https://corsproxy.github.io/?',
+  // corsProxy: 'https://cors.io/?',
   corsProxy: 'https://cors-anywhere.herokuapp.com/',
-  example: {
-    url: 'https://www.gutenberg.org/files/2350/2350-h/2350-h.htm',
-    text: 'May I offer you a glass'
-    // text: 'EPUB (no images)' // 'We have been allies'
-  },
   pagePrefix: [
     '<base href="{u}" target="_top" />'
   ],
@@ -115,16 +110,17 @@ const DEFAULTS = {
     '\n<!-- Injected by: scroll-to-text.js -->',
     // '<base href="{u}" target="_top" />',
     '<script src="{b}/src/scroll-to-driver.js" data-stt-occurrence="{oc}"></script>',
-    '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; padding: 4px; }</style>',
-    ''
+    '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; padding: 4px; }',
+    'html, body { scroll-behavior: smooth; } </style>'
   ],
-  baseUrl: LOC.origin
+  baseUrl: LOC.origin + LOC.pathname
 };
 
 const CFG = /* extends */ DEFAULTS;
 
 const HOLDER = qs(CFG.selector);
 const IFRAME = qs('iframe', HOLDER);
+const ORIG = qs('.orig', HOLDER);
 
 const REQUEST_URL = CFG.corsProxy + CFG.url;
 
@@ -146,6 +142,7 @@ fetch(REQUEST_URL)
     console.warn('[STT] modified page:', FIX_HTML);
 
     IFRAME.setAttribute('srcdoc', NEW_HTML); /* 'data:text/html,' */
+    ORIG.href = CFG.url;
   })
   .catch(error => console.error(error));
 

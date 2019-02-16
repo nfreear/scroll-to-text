@@ -18,9 +18,11 @@
   if (UA.indexOf('Mobile')) {
     W.scrollTo(0, ELEM.offsetTop);
   } else {
+    // W.setTimeout(() => {
     ELEM.setAttribute('tabindex', -1);
     ELEM.focus();
     ELEM.removeAttribute('tabindex');
+    // }, 100);
   }
 
   console.warn('[STT] scroll complete.');

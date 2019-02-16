@@ -7,7 +7,7 @@ button {
 }
 
 body {
-  background: #fcfcfc;
+  background: #f8f8f8;
   margin: 0;
 }
 
@@ -45,6 +45,10 @@ h1 {
   margin: 0 8px;
 }
 
+p {
+  margin: .2rem 0;
+}
+
 form {
   margin: .6rem 8px;
 }
@@ -56,7 +60,7 @@ form {
 }
 
 /* https://stackoverflow.com/questions/24157940/iframe-height-auto-css */
-.ifr-holder {
+.X-ifr-holder {
   height: 0;
   padding-bottom: 56.25%;
   position: relative;
@@ -65,9 +69,18 @@ form {
 
 iframe {
   position: absolute;
-  top: 0;
+  /* bottom: 0; */
+  top: 4.6rem;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 99.7%;
+  height: 92%;
   /* min-height: 300px; */
+}
+
+html, body, .X-iframe {
+  height: 100%;
+}
+
+html {
+  overflow: hidden;
 }
