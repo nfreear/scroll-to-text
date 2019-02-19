@@ -18,8 +18,8 @@ button {
 }
 
 input {
-  padding: 2px 5px;
-  width: 8rem;
+  padding: 2px 4px;
+  width: 7.5rem;
 }
 
 input[ type = url ] {
@@ -27,7 +27,7 @@ input[ type = url ] {
 }
 
 input[ type = number ] {
-  width: 1.6rem;
+  width: 2rem;
 }
 
 button {
@@ -51,6 +51,11 @@ p {
 
 form {
   margin: .6rem 8px;
+}
+
+abbr,
+a.legal {
+  cursor: help;
 }
 
 .sep {

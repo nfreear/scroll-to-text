@@ -8,17 +8,18 @@
 
 <h1> scroll to text </h1>
 
-<form >
+<form accept-charset="utf-8">
   <p>
-    <label>URL <input type="url" name="url" placeholder="https://example.org" pattern="https?:\/\/[\w\.]{3,}" minlength="10" required /></label>
+    <label>URL <input type="url" name="url" placeholder="https://example.org/page" title="https://example.org/page" pattern="^https?:\/\/[\w\.]{3,}.+" minlength="10" required /></label>
     <label>Text <input name="text" minlength="2" maxlength="25" required /></label>
-    <label>Num <input type="number" name="occurrence" min="1" max="10" value="1" /></label>
+    <label><abbr title="Occurrence">Occur</abbr> <input type="number" name="occurrence" min="1" max="15" value="1" /></label>
     <button type="submit">Scroll</button>
 
     <i class="sep"></i>
     <a class="orig" href="#!-orig">Original</a> <i class="sep">|</i>
-    <a class="legal" href="https://github.com/nfreear/scroll-to-text#disclaimer"
-      title="Legal Disclaimer: &#013;I claim no ownership over the web-content presented below, and accept no responsibility for it. &#013;This is prototype software which may contain bugs!">Disclaimer</a>
+    <a class="legal" href="https://github.com/nfreear/scroll-to-text#disclaimer" title=
+      "Legal Disclaimer: &#013;I claim no ownership over the web-content presented below, and accept no responsibility for it. &#013;This is prototype software which may contain bugs!"
+      >Disclaimer</a>
     <i class="sep">|</i>
     <a class="fork" href="https://github.com/nfreear/scroll-to-text#contribute" title="Contribute">Fork me</a>
   </p>

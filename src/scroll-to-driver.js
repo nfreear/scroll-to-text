@@ -25,5 +25,8 @@
     // }, 100);
   }
 
+  ELEM.className += ' nth';
+  ELEM.title += " ~~ 'scroll-to-text'";
+
   console.warn('[STT] scroll complete.');
 })(window, document, navigator.userAgent, '.wh-highlight', 'script[ data-stt-occurrence ]');
