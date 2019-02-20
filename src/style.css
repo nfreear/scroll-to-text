@@ -7,7 +7,7 @@ button {
 }
 
 body {
-  background: #f8f8f8;
+  background: #fafafa;
   margin: 0;
 }
 
@@ -73,6 +73,7 @@ a.legal {
 }
 
 iframe {
+  background: #fff;
   position: absolute;
   /* bottom: 0; */
   top: 4.6rem;

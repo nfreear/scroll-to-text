@@ -11,7 +11,7 @@ module.exports = {
 };
 
 function mark (idx) {
-  return '<mark class="wh-highlight" title="# %s" id="wh-%s">'.replace(/%s/g, idx);
+  return '<mark class="wh-highlight" title="# %s" id="stt-%s">'.replace(/%s/g, idx);
 }
 
 function markClose () {

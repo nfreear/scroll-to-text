@@ -15,7 +15,9 @@
 
   console.warn('[STT] Injected JS:', OCCUR, 'of', ELEMS.length, ELEM); // UA, UA.indexOf('Mobile'));
 
-  if (UA.indexOf('Mobile')) {
+  if (ELEM.scrollIntoView) {
+    ELEM.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+  } else if (UA.indexOf('Mobile')) {
     W.scrollTo(0, ELEM.offsetTop);
   } else {
     // W.setTimeout(() => {
@@ -25,7 +27,7 @@
     // }, 100);
   }
 
-  ELEM.className += ' nth';
+  ELEM.className += ' stt';
   ELEM.title += " ~~ 'scroll-to-text'";
 
   console.warn('[STT] scroll complete.');

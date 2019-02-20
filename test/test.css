@@ -1,0 +1,4 @@
+
+body { color: #222; font: 1.1rem serif; line-height: 1.5rem; margin: 1rem auto; max-width: 32rem; }
+.poem p { margin: .1rem 0; }
+.poem .indent { text-indent: 2rem; }
