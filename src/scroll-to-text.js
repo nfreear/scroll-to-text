@@ -10,8 +10,8 @@ const LOC = window.location;
 
 const DEFAULTS = {
   selector: '#scroll-to-text',
-  url: param('url', 'http://americanrhetoric.com/speeches/mlkihaveadream.htm'),
-  text: param('text', 'Its creed'),
+  url: param('url', 'https://scrolltotext.github.io/test/if.html'), // Was: 'http://americanrhetoric.com/speeches/mlkihaveadream.htm'
+  text: param('text', 'dream'), // Was: 'Its creed'
   occurrence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
   corsProxy: parseInt(param('cp', 1)) ? 'https://cors.io/?' : '',
@@ -24,7 +24,7 @@ const DEFAULTS = {
     // '<base href="{u}" target="_top" />',
     '<script src="{b}/src/scroll-to-driver.js" data-stt-occurrence="{oc}"></script>',
     '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; cursor: help; padding: 1px 3px; }',
-    ' .wh-highlight.nth { border: 3px dotted darkorange; } html, body { scroll-behavior: smooth; } </style>'
+    ' .wh-highlight.stt { border: 3px dotted darkorange; } html, body { scroll-behavior: smooth; } </style>'
   ],
   baseUrl: LOC.origin + LOC.pathname
 };

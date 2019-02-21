@@ -6,7 +6,7 @@
   "author": "© Nick Freear, 29-June-2018.",
   "contributors": [],
   "repository": "https://github.com/nfreear/scroll-to-text.git",
-  "homepage": "https://nfreear.github.io/scroll-to-text/#?url=https://example.org&text=hello+world",
+  "homepage": "https://scrolltotext.github.io/#?url=https://example.org&text=hello+world",
   "keywords": [ "proxy", "scrollto", "highlight", "highlight-word", "fetch" ],
   "engines":  { "node" : ">=9.0" },
   "peerDependencies": {
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "browserify -o dist/scroll-to-text.js src/scroll-to-text.js",
-    "_": "# http://127.0.0.1:9001/?cp=0&url=/test/dream.html&text=day&occurrence=10",
+    "_": "# http://127.0.0.1:9001/?cp=0&url=/test/if.html&text=dream&occurrence=2",
     "start": "npm run _ && live-server --port=9001 --no-browser",
     "fix": "semistandard --fix",
     "test": "semistandard",
