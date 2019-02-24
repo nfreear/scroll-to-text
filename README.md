@@ -45,7 +45,7 @@ API examples:
 
 ## Examples
 
- * [Example 1: '_If_' by Rudyard Kipling (text: '_dream_')][ex1-r]
+ * [Example 1: '_If_' by Rudyard Kipling (text: '_Kings_')][ex1-r]
  * [Example 2: '_I have a dream_' by Martin Luther King (text: '_creed_')][ex2-r]
  * [Example 3: '_Les Principes de la Philosophie_' by Descartes (text: '_très_')][fr]
 
@@ -82,7 +82,7 @@ This is prototype software which may contain bugs!
 [mit]: https://nfreear.mit-license.org/#!-2019-scroll-to-text "© Nick Freear & contributors | MIT License"
 [ex1-d]: http://127.0.0.1:9001/?cp=0&url=/test/if.html&text=dream&occurrence=2
   "Dev/ Localhost"
-[ex1-r]: https://scrolltotext.github.io/?url=https://scrolltotext.github.io/test/if.html&text=dream&occurrence=2
+[ex1-r]: https://scrolltotext.github.io/?url=https://scrolltotext.github.io/test/if.html&text=Kings&occurrence=1
   "Scrolltotext.github.io"
 [ex1b]: https://scrolltotext.github.io/?url=https://poetryfoundation.org/poems/46473/if---&text=Kings
 [ex2-d]: http://127.0.0.1:9001/?url=http://americanrhetoric.com/speeches/mlkihaveadream.htm&text=Its%20creed
