@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /opensearch.xml
+x-created: 2019-02-24
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription
+  xmlns="http://a9.com/-/spec/opensearch/1.1/"
+  xmlns:moz="http://www.mozilla.org/2006/browser/search/"
+  xml:lang="en" >
+  <ShortName>scroll-to-text</ShortName>
+  <Description>scroll-to-text ...</Description>
+  <Contact>nfreear@yahoo.co.uk</Contact>
+  <Url type="text/html"
+       template="{{ site.url }}/url={url}&amp;text={searchTerms}&amp;occurrence={occurrence}"/>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>0</AdultContent>
+  <Language>en</Language>
+  <moz:SearchForm>{{ site.url }}/</moz:SearchForm>
+</OpenSearchDescription>

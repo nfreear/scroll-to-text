@@ -7,6 +7,8 @@ A Javascript-based proxy to serve a web-page, and highlight and scroll to an arb
 
  * [scrolltotext.github.io][]
 
+Read the [blog post][].
+
 Features:
 
  * Supports single or multiple words;
@@ -78,6 +80,7 @@ This is prototype software which may contain bugs!
 [gh]: https://github.com/scrolltotext/scrolltotext.github.io
 [gh-orig]: https://github.com/nfreear/scroll-to-text
 [scrolltotext.github.io]: https://scrolltotext.github.io/
+[blog post]: https://nick.freear.org.uk/2019/02/21/scroll-to-text.html?utm_source=readme
 [n]: https://twitter.com/nfreear
 [mit]: https://nfreear.mit-license.org/#!-2019-scroll-to-text "© Nick Freear & contributors | MIT License"
 [ex1-d]: http://127.0.0.1:9001/?cp=0&url=/test/if.html&text=dream&occurrence=2
@@ -110,5 +113,12 @@ This is prototype software which may contain bugs!
   "I want to use :~ fetch, arrow-func, querySelector, css-scroll, js-scroll"
 [iwtu-2]: http://iwanttouse.com/#fetch,arrow-functions,queryselector
   "I want to use :~ fetch, arrow-func, querySelector (55%)"
+
+[ch-stt]: https://chromeunboxed.com/chromes-scroll-to-text-looks-to-anchor-tag-the-web/
+  "Chrome's “SCROLL TO TEXT” looks to anchor tag the web, February 16, 2019 By GABRIEL BRANGERS"
+[ch-stt-gh]: https://github.com/bokand/ScrollToTextFragment
+  "Proposal: Scroll-To-Text using a URL fragment"
+[ch-stt-news]: https://m.dailyhunt.in/news/india/english/91mobiles-epaper-mobiles/google+chrome+testing+scroll+to+text+feature+to+allow+users+to+share+link+to+specific+section+on+a+page-newsid-108928476
+  "Google Chrome testing 'Scroll to Text' feature to allow users to share link to specific section on a page, 16 Feb 2019, by 91 Mobiles."
 
 [End]: //

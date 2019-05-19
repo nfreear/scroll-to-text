@@ -6,7 +6,8 @@
   "author": "© Nick Freear, 29-June-2018.",
   "contributors": [],
   "repository": "https://github.com/nfreear/scroll-to-text.git",
-  "homepage": "https://scrolltotext.github.io/#?url=https://example.org&text=hello+world",
+  "homepage": "http://nick.freear.org.uk/2019/02/21/scroll-to-text.html",
+  "exampleUrl": "https://scrolltotext.github.io/#?url=https://example.org&text=hello+world",
   "keywords": [ "proxy", "scrollto", "highlight", "highlight-word", "fetch" ],
   "engines":  { "node" : ">=9.0" },
   "peerDependencies": {

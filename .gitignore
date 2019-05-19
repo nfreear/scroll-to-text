@@ -1,4 +1,8 @@
 /node_modules
-/dist
+# /dist
 *BAK*
 *-test.js
+_config.yml
+CNAME
+
+# /test

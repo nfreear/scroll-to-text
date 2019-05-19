@@ -54,7 +54,8 @@ fetch(REQUEST_URL)
 
     console.warn('[STT] modified page:', FIX_HTML);
 
-    IFRAME.setAttribute('srcdoc', NEW_HTML); /* 'data:text/html,' */
+    IFRAME.setAttribute('srcdoc', FIX_HTML); /* 'data:text/html,' */
+
     ORIG.href = CFG.url;
   })
   .catch(error => console.error(error));
