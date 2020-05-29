@@ -4,7 +4,9 @@
   © Nick Freear, 29-June-2018.
 */
 
-const highlight = require('./highlight-phrase').highlight;
+import { highlight } from './highlight-phrase.js';
+// const highlight = require('./highlight-phrase').highlight;
+
 const fetch = window.fetch;
 const LOC = window.location;
 

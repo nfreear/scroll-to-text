@@ -4,11 +4,13 @@
   © Nick Freear, 07-February-2019.
 */
 
-module.exports = {
+export { highlight };
+
+/* module.exports = {
   highlight: highlight,
   highlightPhrase: highlightPhrase,
   highlightWord: highlightWord
-};
+}; */
 
 function mark (idx) {
   return '<mark class="wh-highlight" title="# %s" id="stt-%s">'.replace(/%s/g, idx);

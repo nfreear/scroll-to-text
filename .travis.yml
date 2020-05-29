@@ -10,7 +10,7 @@ git:
 
 # install: npm install
 
-before_script: npm run build
+before_script: npm run build --if-present
 
 # script: npm test
 
