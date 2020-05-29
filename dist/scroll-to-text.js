@@ -11,6 +11,14 @@ module.exports = {
   highlightWord: highlightWord
 };
 
+function mark (idx) {
+  return '<mark class="wh-highlight" title="# %s" id="stt-%s">'.replace(/%s/g, idx);
+}
+
+function markClose () {
+  return '</mark>';
+}
+
 function highlight (text, query) {
   if (!text) throw Error('No text provided');
   if (typeof text !== 'string') throw Error('Passed paramater is not a string');
@@ -32,6 +40,7 @@ function highlightPhrase (text, query) {
   console.warn(q1, q2);
 
   let alsoMatch = false;
+  let count = 0;
 
   return text
     .split(' ')
@@ -41,13 +50,16 @@ function highlightPhrase (text, query) {
       const plusOne = ar[ idx + 1 ];
       const prevMatch = alsoMatch;
 
-      alsoMatch = q2 ? (plusOne && plusOne.indexOf(q2)) >= 0 : true;
+      // Fixed position of brackets.
+      alsoMatch = q2 ? (plusOne && plusOne.indexOf(q2) >= 0) : true;
 
       // console.warn(idx, word, plusOne, alsoMatch);
 
       if (charIndex >= 0 && (alsoMatch || prevMatch)) {
-        word = insertString(word, charIndex, '<mark class="wh-highlight">');
-        word = insertString(word, word.length, '</mark>');
+        count++;
+
+        word = insertString(word, charIndex, mark(count));
+        word = insertString(word, word.length, markClose());
       }
 
       return word;
@@ -55,8 +67,11 @@ function highlightPhrase (text, query) {
     .join(' ');
 }
 
+/*!
+  highlight-word: Copyright (c) 2018 Dave Bitter | MIT License
+*/
 // Source :- https://npmjs.com/package/highlight-word
-// https://github.com/DaveBitter/highlight_word/tree/05d786a144
+// https://github.com/DaveBitter/highlight_word/blob/05d786a1447f/index.js
 
 function insertString (str, index, value) {
   return str.substr(0, index) + value + str.substr(index);
@@ -68,13 +83,18 @@ function highlightWord (text, query) {
   if (!query) throw Error('No query provided');
   if (typeof query !== 'string') { throw Error('Passed paramater is not a string'); }
 
+  let count = 0;
+
   return text
     .split(' ')
     .map(word => {
       const charIndex = word.indexOf(query);
+
       if (charIndex >= 0) {
-        word = insertString(word, charIndex, '<mark class="wh-highlight">');
-        word = insertString(word, word.length, '</mark>');
+        count++;
+
+        word = insertString(word, charIndex, mark(count)); // Was: '<mark class="wh-highlight">'
+        word = insertString(word, word.length, markClose());
       }
 
       return word;
@@ -97,12 +117,12 @@ const LOC = window.location;
 
 const DEFAULTS = {
   selector: '#scroll-to-text',
-  url: param('url', 'http://americanrhetoric.com/speeches/mlkihaveadream.htm'),
-  text: param('text', 'Its creed'),
+  url: param('url', 'https://scrolltotext.github.io/test/if.html'), // Was: 'http://americanrhetoric.com/speeches/mlkihaveadream.htm'
+  text: param('text', 'dream'), // Was: 'Its creed'
   occurrence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
-  // corsProxy: 'https://cors.io/?',
-  corsProxy: 'https://cors-anywhere.herokuapp.com/',
+  corsProxy: parseInt(param('cp', 1)) ? 'https://cors.io/?' : '',
+  // corsProxy: 'https://cors-anywhere.herokuapp.com/',
   pagePrefix: [
     '<base href="{u}" target="_top" />'
   ],
@@ -110,8 +130,8 @@ const DEFAULTS = {
     '\n<!-- Injected by: scroll-to-text.js -->',
     // '<base href="{u}" target="_top" />',
     '<script src="{b}/src/scroll-to-driver.js" data-stt-occurrence="{oc}"></script>',
-    '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; padding: 4px; }',
-    'html, body { scroll-behavior: smooth; } </style>'
+    '<style> .wh-highlight { background: {col}; border-radius: 5px; color: #005; cursor: help; padding: 1px 3px; }',
+    ' .wh-highlight.stt { border: 3px dotted darkorange; } html, body { scroll-behavior: smooth; } </style>'
   ],
   baseUrl: LOC.origin + LOC.pathname
 };
@@ -154,7 +174,7 @@ function param (pmName, defaultPm) {
   defaultPm = defaultPm || null;
   const RE = new RegExp('[?&]' + pmName + '=(.+?)(:?&|$)'); // (/text=(.+?)(:?&|$)/) (/url=(https?.+?)(:?&|$)/) (/bg=(\w+?)(:?&|$)/);
   const MAT = LOC.search.match(RE);
-  const VALUE = decodeURIComponent(MAT ? MAT[ 1 ] : defaultPm);
+  const VALUE = decodeURIComponent(MAT ? MAT[ 1 ] : defaultPm).replace(/\+/g, ' '); // BUG fix: why '+', not '%20' ?!
 
   // Security.
   if (/([<>;]|javascript:)/i.test(VALUE)) {
