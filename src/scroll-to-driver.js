@@ -11,7 +11,7 @@
   const OCCUR = D.querySelector(occurSelector).dataset.sttOccurrence;
   const ELEMS = D.querySelectorAll(selector);
 
-  const ELEM = ELEMS.length && ELEMS[ OCCUR - 1 ] ? ELEMS[ OCCUR - 1 ] : null;
+  const ELEM = ELEMS.length && ELEMS[OCCUR - 1] ? ELEMS[OCCUR - 1] : null;
 
   console.warn('[STT] Injected JS:', OCCUR, 'of', ELEMS.length, ELEM); // UA, UA.indexOf('Mobile'));
 

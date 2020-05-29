@@ -33,8 +33,8 @@ function highlight (text, query) {
 }
 
 function highlightPhrase (text, query) {
-  const q1 = query.split(' ')[ 0 ];
-  const q2 = query.split(' ')[ 1 ] || null;
+  const q1 = query.split(' ')[0];
+  const q2 = query.split(' ')[1] || null;
 
   console.warn(q1, q2);
 
@@ -46,7 +46,7 @@ function highlightPhrase (text, query) {
     .map((word, idx, ar) => {
       const charIndex = alsoMatch ? word.indexOf(q2) : word.indexOf(q1);
 
-      const plusOne = ar[ idx + 1 ];
+      const plusOne = ar[idx + 1];
       const prevMatch = alsoMatch;
 
       // Fixed position of brackets.

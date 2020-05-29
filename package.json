@@ -9,7 +9,9 @@
   "homepage": "http://nick.freear.org.uk/2019/02/21/scroll-to-text.html",
   "exampleUrl": "https://scrolltotext.github.io/#?url=https://example.org&text=hello+world",
   "keywords": [ "proxy", "scrollto", "highlight", "highlight-word", "fetch" ],
-  "engines":  { "node" : ">=9.0" },
+  "engines": {
+    "node": ">=9.0"
+  },
   "peerDependencies": {
     "highlight-word": "^1.0.0",
     "pure-scrollto": "^1.0.4"
@@ -17,7 +19,7 @@
   "devDependencies": {
     "browserify": "^16.2.3",
     "live-server": "^1.2.1",
-    "semistandard": "^13.0.1"
+    "semistandard": "^14.2.0"
   },
   "semistandard": {
     "ignore": [ "dist/" ]
