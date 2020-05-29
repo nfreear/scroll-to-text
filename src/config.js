@@ -1,6 +1,9 @@
 
 import { param } from './util.js';
 
+const CORS_PROXY = 'https://thingproxy.freeboard.io/fetch/';
+// const CORS_PROXY = 'https://cors-proxy.htmldriven.com/?url='; // Was: 'https://cors.io/?'
+
 const LOC = window.location;
 
 const DEFAULTS = {
@@ -9,7 +12,7 @@ const DEFAULTS = {
   text: param('text', 'dream'), // Was: 'Its creed'
   occurrence: parseInt(param('occurrence', 1)),
   background: param('bg', 'yellow'),
-  corsProxy: parseInt(param('cp', 1)) ? 'https://cors.io/?' : '',
+  corsProxy: parseInt(param('cp', 1)) ? CORS_PROXY : '',
   // corsProxy: 'https://cors-anywhere.herokuapp.com/',
   pagePrefix: [
     '<base href="{u}" target="_top" />'

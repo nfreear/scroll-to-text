@@ -26,7 +26,7 @@
   },
   "scripts": {
     "X-build": "browserify -o dist/scroll-to-text.js src/scroll-to-text.js",
-    "_": "# http://127.0.0.1:9001/?cp=0&url=/test/if.html&text=dream&occurrence=2",
+    "_": "# http://localhost:9001/?url=https://scrolltotext.github.io/test/if.html&text=Kings&occurrence=1",
     "start": "npm run _ && live-server --port=9001 --no-browser",
     "fix": "semistandard --fix",
     "test": "semistandard",
